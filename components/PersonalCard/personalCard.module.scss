@@ -1,0 +1,20 @@
+.personal-card-container {
+  height: 100vh;
+  .personal-card {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 4px;
+    animation: shadow 5s forwards;
+  }
+}
+
+@keyframes shadow {
+  from {
+    box-shadow: 0 0 0 rgba(154,160,185,.05), 0 0 0 rgba(166,173,201,.2);
+    transform: scale(0.95);
+  }
+  to {
+    box-shadow: 0 10px 20px rgba(154,160,185,.05), 0 30px 80px rgba(166,173,201,.2);
+    transform: scale(1);
+  }
+}
