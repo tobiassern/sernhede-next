@@ -1,0 +1,20 @@
+{
+  "name": "sernhede-next",
+  "version": "0.1.0",
+  "description": "Fancy Next.js app",
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start",
+    "build:static": "next build && next out"
+  },
+  "dependencies": {
+    "next": "^9.5.2",
+    "postcss-flexbugs-fixes": "^4.2.1",
+    "postcss-preset-env": "^6.7.0",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "sass": "^1.26.10",
+    "tailwindcss": "^1.7.6"
+  }
+}
