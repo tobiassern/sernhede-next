@@ -13,7 +13,7 @@ export default function Home({allPostsData}) {
       {allPostsData.map((item, index) => {
         return (
           <div key={`${index}`}>
-            <h3>{item.title}</h3>
+            <h3>{item.title} {item.slug}</h3>
           </div>
         )
         }) 
