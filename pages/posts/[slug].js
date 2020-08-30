@@ -20,6 +20,7 @@ export default function Post({post}) {
 
   return (
     <>
+      {post.coverImage && <img src={post.coverImage.url} />}
       <p>{post.title}</p>
     </>
   )
