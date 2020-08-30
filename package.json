@@ -3,12 +3,13 @@
   "version": "0.1.0",
   "description": "Fancy Next.js app",
   "scripts": {
-    "dev": "next",
+    "dev": "NODE_OPTIONS='--inspect' next",
     "build": "next build",
     "start": "next start",
     "build:static": "next build && next out"
   },
   "dependencies": {
+    "contentful": "^7.14.6",
     "next": "^9.5.2",
     "postcss-flexbugs-fixes": "^4.2.1",
     "postcss-preset-env": "^6.7.0",
