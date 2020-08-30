@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import Link from 'next/link'
 import PersonalCard from 'components/PersonalCard';
 import { getSortedPostsData } from 'lib/posts';
 
@@ -12,8 +13,11 @@ export default function Home({allPostsData}) {
       <PersonalCard />
       {allPostsData.map((item, index) => {
         return (
+
           <div key={`${index}`}>
-            <h3>{item.title} {item.slug}</h3>
+            <Link href="/posts/[id]" as={`/posts/${item.slug}`}>
+              <a><h3>{item.title} {item.slug}</h3></a>
+            </Link>
           </div>
         )
         }) 
@@ -27,6 +31,7 @@ export async function getStaticProps() {
   return {
     props: {
       allPostsData
-    }
+    },
+    revalidate: 60
   }
 }
