@@ -3,14 +3,22 @@
   "version": "0.1.0",
   "description": "Fancy Next.js app",
   "scripts": {
-    "dev": "NODE_OPTIONS='--inspect' next",
+    "dev-inspect": "NODE_OPTIONS='--inspect' next",
+    "dev": "next",
     "build": "next build",
     "start": "next start",
     "build:static": "next build && next out"
   },
   "dependencies": {
+    "antd": "^4.6.1",
     "contentful": "^7.14.6",
+    "firebase": "^7.19.1",
+    "firebase-admin": "^9.1.1",
+    "js-cookie": "^2.2.1",
+    "moment": "^2.27.0",
     "next": "^9.5.2",
+    "next-cookies": "^2.0.3",
+    "nookies": "^2.4.0",
     "postcss-flexbugs-fixes": "^4.2.1",
     "postcss-preset-env": "^6.7.0",
     "react": "^16.13.1",

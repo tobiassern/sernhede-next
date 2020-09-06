@@ -1,37 +1,38 @@
-import Head from 'next/head';
-import Link from 'next/link'
-import PersonalCard from 'components/PersonalCard';
-import { getSortedPostsData } from 'lib/posts';
+import { useEffect, useCallback } from 'react';
+import Link from 'next/link';
+import { useAuth } from 'lib/context/auth';
 
-export default function Home({allPostsData}) {
+// export const useInterval = (
+//   _callback: (...args: any[]) => any,
+//   delay: number
+// ) => {
+//   const callback = useCallback(_callback, []);
+//   useEffect(() => {
+//     let id = setInterval(callback, delay);
+//     return () => clearInterval(id);
+//   }, [delay]);
+// };
+
+const Home = () => {
+  const { user } = useAuth();
+  console.log(user);
+
   return (
-    <>
-      <Head>
-        <title>Tobias Sernhede</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-      <PersonalCard />
-      {allPostsData.map((item, index) => {
-        return (
+    <div style={{ padding: '40px' }}>
+      <p>{`User ID: ${user ? user.uid : 'no user signed in'}`}</p>
 
-          <div key={`${index}`}>
-            <Link href="/posts/[id]" as={`/posts/${item.slug}`}>
-              <a><h3>{item.title} {item.slug}</h3></a>
-            </Link>
-          </div>
-        )
-        }) 
-      }
-    </>
-  )
-}
+      <p>
+        <Link href="/authenticated">
+          <a>Go to authenticated route</a>
+        </Link>
+      </p>
+      <p>
+        <Link href="/login">
+          <a>Login</a>
+        </Link>
+      </p>
+    </div>
+  );
+};
 
-export async function getStaticProps() {
-  const allPostsData = await getSortedPostsData();
-  return {
-    props: {
-      allPostsData
-    },
-    revalidate: 60
-  }
-}
+export default Home;

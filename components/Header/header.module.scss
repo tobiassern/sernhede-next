@@ -1,0 +1,12 @@
+.header {
+  height: 64px;
+  line-height: 64px;
+  display: flex;
+  justify-content: space-between;
+  background-color: #fff;
+  position: fixed;
+  min-width: 100%;
+  .menu {
+    line-height: inherit;
+  }
+}
