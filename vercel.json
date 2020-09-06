@@ -1,0 +1,7 @@
+{
+  "build": {
+    "env": {
+      "FIREBASE_SERVICE_ACCOUNT": "@secret-name"
+    }
+  }
+}

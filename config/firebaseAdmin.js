@@ -2,7 +2,9 @@ import * as firebaseAdmin from 'firebase-admin';
 
 // get this JSON from the Firebase board
 // you can also store the values in environment variables
-import serviceAccount from 'service-account-firebase.json'; 
+const serviceAccount = JSON.parse(
+    Buffer.from(process.env.FIREBASE_SERVICE_ACCOUNT, 'base64').toString()
+);
 
 if (!firebaseAdmin.apps.length) {
   firebaseAdmin.initializeApp({
@@ -12,3 +14,5 @@ if (!firebaseAdmin.apps.length) {
 }
 
 export { firebaseAdmin };
+
+//https://dev.to/parondeau/gcp-credentials-next-js-3a0d
