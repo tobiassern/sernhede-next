@@ -16,7 +16,7 @@ if (!firebaseClient.apps.length) {
   firebaseClient.initializeApp(CLIENT_CONFIG);
   firebaseClient
     .auth()
-    .setPersistence(firebaseClient.auth.Auth.Persistence.SESSION);
+    //.setPersistence(firebaseClient.auth.Auth.Persistence.SESSION);
 }
 
 export { firebaseClient };
